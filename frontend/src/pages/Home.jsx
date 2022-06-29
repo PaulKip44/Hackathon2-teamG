@@ -1,9 +1,7 @@
-import logo from "@assets/logo-apside.png";
-
 export default function Home() {
   return (
     <header className="App-header">
-      <img src={logo} width="15%" alt="apside logo" />
+      {/* <img src={logo} width="15%" alt="apside logo" /> */}
       <h1>Hello Wilder WELCOME</h1>
       <h2>Hello Wilder WELCOME</h2>
       <h3>Hello Wilder WELCOME</h3>

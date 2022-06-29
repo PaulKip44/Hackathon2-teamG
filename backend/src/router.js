@@ -1,16 +1,29 @@
 const express = require("express");
 
-const { ItemController } = require("./controllers");
-const { ProjectController } = require("./controllers");
+const {
+  UserController,
+  ProjectController,
+  UserProjectController,
+} = require("./controllers");
 
 const router = express.Router();
 
-router.get("/items", ItemController.browse);
-router.get("/items/:id", ItemController.read);
-router.put("/items/:id", ItemController.edit);
-router.post("/items", ItemController.add);
-router.delete("/items/:id", ItemController.delete);
+// ROUTES USER
 
-router.get("/project", ProjectController.browse);
+router.get("/users", UserController.browse);
+router.get("/users/:id", UserController.read);
+router.post("/users", UserController.add);
+router.delete("/users/:id", UserController.delete);
+
+// ROUTES PROJECT
+
+router.get("/projects", ProjectController.browse);
+router.get("/projects/:id", ProjectController.read);
+router.post("/projects", ProjectController.add);
+router.delete("/projects/:id", ProjectController.delete);
+
+// ROUTES to add, delete or update a user to a project
+
+router.post("/userhasproject", UserProjectController.add);
 
 module.exports = router;

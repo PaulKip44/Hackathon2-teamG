@@ -1,5 +1,6 @@
 import ProjectsBacklog from "@components/projectsBacklog/ProjectsBacklog";
 import Home from "@pages/Home";
+import Dashboard from "./pages/Dashboard";
 
 import React from "react";
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";

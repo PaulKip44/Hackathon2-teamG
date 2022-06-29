@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import DisplayProject from "./DisplayProject";
 import "./ProjectsBacklog.css";
-import Axios from "axios";
+import api from "@services/endpoint";
 
 const ProjectsBacklog = () => {
+  const [user, setUser] = useState(1);
   const [projects, setProjects] = useState([]);
-  const ENDPOINT = `http://localhost:5000/project`;
+  const ENDPOINT = `/projects`;
   useEffect(() => {
-    Axios.get(ENDPOINT).then((result) => {
+    api.get(ENDPOINT).then((result) => {
       console.error(result.data[0]);
       setProjects(result.data);
     });
@@ -16,7 +17,9 @@ const ProjectsBacklog = () => {
   return (
     <>
       {projects.map((project) => {
-        return <DisplayProject project={project} key={project.Id} />;
+        return (
+          <DisplayProject project={project} key={project.Id} user={user} />
+        );
       })}
     </>
   );

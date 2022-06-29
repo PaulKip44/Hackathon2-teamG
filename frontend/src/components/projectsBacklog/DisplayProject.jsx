@@ -1,8 +1,20 @@
 import React from "react";
+import api from "@services/endpoint";
 
-const DisplayProject = ({ project }) => {
-  const handleJoin = () => {
-    console.error("coucou");
+const DisplayProject = ({ project, user }) => {
+  const handleJoin = (e) => {
+    console.error(e.target.value);
+    const ENDPOINT = "/userhasproject";
+    const data = {
+      userId: user,
+      projectId: parseInt(e.target.value, 10),
+      role: "Contributor",
+    };
+    console.error(data);
+
+    api.post(ENDPOINT, data).then((result) => {
+      console.error(result);
+    });
   };
   const handleLike = () => {
     console.error("coucou");
@@ -19,7 +31,12 @@ const DisplayProject = ({ project }) => {
         </details>
         <div className="feedback">
           <div className="rejoindre">
-            <button type="button" className="btn-blue" onClick={handleJoin}>
+            <button
+              type="button"
+              className="btn-blue"
+              value={project.Id}
+              onClick={handleJoin}
+            >
               Join project
             </button>
           </div>
