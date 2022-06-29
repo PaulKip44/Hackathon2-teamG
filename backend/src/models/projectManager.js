@@ -4,12 +4,12 @@ class projectManager extends AbstractManager {
   static table = "project";
 
   insert(newProject) {
-    let tuples = "name,";
-    let values = "?,";
+    let tuples = "name";
+    let values = "?";
     const keyTable = [newProject.name];
 
-    if (newProject.used_toolsy) {
-      tuples += ", used_toolsy";
+    if (newProject.used_tools) {
+      tuples += ", used_tools";
       values += ",?";
       keyTable.push(newProject.used_tools);
     }

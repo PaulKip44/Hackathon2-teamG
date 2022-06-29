@@ -40,7 +40,7 @@ class ProjectController {
     //   thematic:"",
     // }
 
-    models.user
+    models.project
       .insert(newProject)
       .then(([result]) => {
         res.status(201).send({ ...newProject, id: result.insertId });

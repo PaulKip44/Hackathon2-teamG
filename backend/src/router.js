@@ -1,6 +1,6 @@
 const express = require("express");
 
-const { UserController } = require("./controllers");
+const { UserController, ProjectController } = require("./controllers");
 
 const router = express.Router();
 
@@ -16,6 +16,6 @@ router.delete("/users/:id", UserController.delete);
 router.get("/projects", ProjectController.browse);
 router.get("/projects/:id", ProjectController.read);
 router.post("/projects", ProjectController.add);
-router.delete("/projects/:id", PrpjectController.delete);
+router.delete("/projects/:id", ProjectController.delete);
 
 module.exports = router;
