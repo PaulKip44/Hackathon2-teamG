@@ -1,20 +1,20 @@
 import ProjectsBacklog from "@components/projectsBacklog/ProjectsBacklog";
-import Home from "@pages/Home";
-import Dashboard from "./pages/Dashboard";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Dashboard from "@pages/Dashboard";
+import Login from "@pages/Login";
 import React from "react";
-import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Router>
+      <BrowserRouter>
         <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/backlog" element={<ProjectsBacklog />}></Route>
-          <Route path="/" element={<Home />}></Route>
         </Routes>
-      </Router>
+      </BrowserRouter>
     </div>
   );
 }
