@@ -29,7 +29,7 @@ class userManager extends AbstractManager {
       values += ",?";
       keyTable.push(newUser.type);
     }
-    console.error(newUser, tuples, values, keyTable);
+
     return this.connection.query(
       `insert into ${userManager.table} (${tuples}) values (${values})`,
       keyTable
