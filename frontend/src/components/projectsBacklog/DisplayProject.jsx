@@ -97,12 +97,14 @@ const DisplayProject = ({ project, user }) => {
   return (
     <>
       <div className="displayproject-main">
-        <details className="project-synthesis">
-          <summary>
-            <h2>{project.name}</h2>
-          </summary>
-          <div>{project.description}</div>
-        </details>
+        <div className="project-synthesis">
+          <details className="project-synthesis">
+            <summary>
+              <h2>{project.name}</h2>
+            </summary>
+            <div>{project.description}</div>
+          </details>
+        </div>
         <div className="feedback">
           <div className="rejoindre">
             {hasJoined ? allreadyJoined() : joinProjectButton()}

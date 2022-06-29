@@ -1,23 +1,24 @@
-.displayproject-main {
-  display: flex;
-  margin: 1rem;
-  align-items: center;
-}
-
 .user-selection {
   margin: 1rem;
   text-align: center;
 }
+.displayproject-main {
+  display: flex;
+  margin: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
 
 .project-synthesis {
-  width: 80ch;
-  display: flex;
+  width: 65ch;
+  text-align: left;
 }
 
 .feedback {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 18rem;
 }
 
 .btn-blue {
