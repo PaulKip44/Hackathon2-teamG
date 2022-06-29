@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import api from "@services/endpoint";
 
 const DisplayProject = ({ project, user }) => {
+  const [hasJoined, setHasJoined] = useState(false);
+
   const handleJoin = (e) => {
     console.error(e.target.value);
     const ENDPOINT = "/userhasproject";
@@ -12,12 +14,40 @@ const DisplayProject = ({ project, user }) => {
     };
     console.error(data);
 
-    api.post(ENDPOINT, data).then((result) => {
-      console.error(result);
-    });
+    api
+      .post(ENDPOINT, data)
+      .then((result) => {
+        if (result.status === 201) {
+          setHasJoined(true);
+        }
+      })
+      .catch((err) => {
+        console.error(error);
+      });
   };
   const handleLike = () => {
     console.error("coucou");
+  };
+
+  const joinProjectButton = () => {
+    return (
+      <button
+        type="button"
+        className="btn-blue"
+        value={project.Id}
+        onClick={handleJoin}
+      >
+        Join project
+      </button>
+    );
+  };
+
+  const allreadyJoined = () => {
+    return (
+      <button type="button" className="btn-greyed" value={project.Id}>
+        Successfully joined
+      </button>
+    );
   };
 
   return (
@@ -31,14 +61,16 @@ const DisplayProject = ({ project, user }) => {
         </details>
         <div className="feedback">
           <div className="rejoindre">
-            <button
+            {hasJoined ? allreadyJoined() : joinProjectButton()}
+
+            {/* <button
               type="button"
               className="btn-blue"
               value={project.Id}
               onClick={handleJoin}
             >
               Join project
-            </button>
+            </button> */}
           </div>
           <div className="like">
             <button type="button" className="btn-orange" onClick={handleLike}>

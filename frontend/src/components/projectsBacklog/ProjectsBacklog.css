@@ -22,6 +22,19 @@
   margin: 1rem;
 }
 
+.btn-greyed {
+  font-family: var(--font-p);
+  font-size: var(--font-size-p);
+  padding: 0.2rem 1.2rem;
+  border-radius: 5px;
+  background-color: var(--color_2_disabled);
+
+  color: var(--color_light);
+  transition: var(--transition);
+  border: none;
+  margin: 1rem;
+}
+
 h2 {
   display: inline;
 }
