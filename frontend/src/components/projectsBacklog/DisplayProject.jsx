@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import api from "@services/endpoint";
 
 const DisplayProject = ({ project, user }) => {
   const [hasJoined, setHasJoined] = useState(false);
+  const [hasLiked, setHasLiked] = useState(false);
 
   const handleJoin = (e) => {
     console.error(e.target.value);
@@ -25,8 +26,22 @@ const DisplayProject = ({ project, user }) => {
         console.error(error);
       });
   };
-  const handleLike = () => {
-    console.error("coucou");
+  const handleLike = (e) => {
+    const ENDPOINT = "/likeproject";
+    const data = {
+      userId: user,
+      projectId: parseInt(e.target.value, 10),
+    };
+    api
+      .post(ENDPOINT, data)
+      .then((result) => {
+        if (result.status === 201) {
+          setHasLiked(true);
+        }
+      })
+      .catch((err) => {
+        console.error(error);
+      });
   };
 
   const joinProjectButton = () => {
