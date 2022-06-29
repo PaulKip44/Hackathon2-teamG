@@ -1,8 +1,8 @@
 const models = require("../models");
 
-class ItemController {
+class UserController {
   static browse = (req, res) => {
-    models.item
+    models.user
       .findAll()
       .then(([rows]) => {
         res.send(rows);
@@ -14,7 +14,7 @@ class ItemController {
   };
 
   static read = (req, res) => {
-    models.item
+    models.user
       .find(req.params.id)
       .then(([rows]) => {
         if (rows[0] == null) {
@@ -29,37 +29,24 @@ class ItemController {
       });
   };
 
-  static edit = (req, res) => {
-    const item = req.body;
-
-    // TODO validations (length, format...)
-
-    item.id = parseInt(req.params.id, 10);
-
-    models.item
-      .update(item)
-      .then(([result]) => {
-        if (result.affectedRows === 0) {
-          res.sendStatus(404);
-        } else {
-          res.sendStatus(204);
-        }
-      })
-      .catch((err) => {
-        console.error(err);
-        res.sendStatus(500);
-      });
-  };
-
   static add = (req, res) => {
-    const item = req.body;
+    const newUser = req.body;
 
-    // TODO validations (length, format...)
+    //   newUser=
+    //   {firstname:"",
+    //   lastname:"",
+    //   email:"",
+    //   password:"",
+    //   city:"",
+    //   skill:"",
+    //   type:"",
+    // agence_Id:0,
+    // }
 
-    models.item
-      .insert(item)
+    models.user
+      .insert(newUser)
       .then(([result]) => {
-        res.status(201).send({ ...item, id: result.insertId });
+        res.status(201).send({ ...newUser, id: result.insertId });
       })
       .catch((err) => {
         console.error(err);
@@ -68,7 +55,7 @@ class ItemController {
   };
 
   static delete = (req, res) => {
-    models.item
+    models.user
       .delete(req.params.id)
       .then(() => {
         res.sendStatus(204);
@@ -80,4 +67,4 @@ class ItemController {
   };
 }
 
-module.exports = ItemController;
+module.exports = UserController;

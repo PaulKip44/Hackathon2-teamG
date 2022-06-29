@@ -3,15 +3,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap");
 
 :root {
-  --color_1: #ff882d;
-  --color_2: #0f2334;
-  --color_dark: #183650;
+  --color_1: #e89759;
+  --color_2: #162f3f;
+  --color_dark: #242424;
   --color_light: #e8e5e5;
   --background-color: #f0f8ff;
   --font-size-h1: 3.5rem;
   --font-size-h2: 2.2rem;
   --font-size-h3: 1.5rem;
-  --font-size-p: 1.3rem;
+  --font-size-p: clamp(1.2rem, 2vw, 1.8rem);
   --border-radius: 5px;
   --font-p: "Hind", sans-serif;
   --font-h: "Montserrat", sans-serif;
@@ -45,7 +45,8 @@ h3 {
 }
 
 p,
-a {
+a,
+li {
   text-decoration: none;
   font-size: var(--font-size-p);
   color: var(--color_dark);

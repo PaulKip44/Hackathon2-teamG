@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useState } from "react";
-import logo from "../assets/logo-apside.png";
+import logo from "../assets/logo.png";
 
 import "./Login.css";
 

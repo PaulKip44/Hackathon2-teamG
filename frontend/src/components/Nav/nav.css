@@ -1,0 +1,22 @@
+.logo {
+  width: 100%;
+  padding: 1.5rem;
+  background-color: var(--color_2);
+}
+
+#navbar {
+  height: 100vh;
+  max-width: 20%;
+  min-width: 10rem;
+  background-color: var(--color_2);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#navbar li {
+  background-color: var(--color_2);
+  line-height: 4rem;
+  color: var(--color_light);
+  padding-left: 20%;
+}
