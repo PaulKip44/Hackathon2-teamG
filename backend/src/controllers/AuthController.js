@@ -1,4 +1,5 @@
 const models = require("../models");
+const { encodeJwt } = require("../helpers/jwtHelper");
 
 exports.login = (req, res) => {
   const { email, password } = req.body;
@@ -7,7 +8,12 @@ exports.login = (req, res) => {
     if (!user) {
       res.status(401).send("Invalid credentials");
     } else {
-      res.status(200).send("Good !!!");
+      // eslint-disable-next-line no-param-reassign
+      delete user.password;
+      const token = encodeJwt(user);
+
+      res.cookie("token", token, { httpOnly: true, secure: false });
+      res.status(200).json({ username: user.firstname });
     }
   });
 };
