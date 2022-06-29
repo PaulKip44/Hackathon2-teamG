@@ -1,0 +1,31 @@
+.displayproject-main {
+  display: flex;
+  margin: 1rem;
+  align-items: center;
+}
+
+.project-synthesis {
+  width: 80ch;
+  display: flex;
+}
+
+.feedback {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-blue {
+  margin: 1rem;
+}
+.btn-orange {
+  margin: 1rem;
+}
+
+h2 {
+  display: inline;
+}
+
+summary {
+  display: inline;
+}
