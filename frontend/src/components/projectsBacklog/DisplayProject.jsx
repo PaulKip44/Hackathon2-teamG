@@ -62,15 +62,6 @@ const DisplayProject = ({ project, user }) => {
         <div className="feedback">
           <div className="rejoindre">
             {hasJoined ? allreadyJoined() : joinProjectButton()}
-
-            {/* <button
-              type="button"
-              className="btn-blue"
-              value={project.Id}
-              onClick={handleJoin}
-            >
-              Join project
-            </button> */}
           </div>
           <div className="like">
             <button type="button" className="btn-orange" onClick={handleLike}>

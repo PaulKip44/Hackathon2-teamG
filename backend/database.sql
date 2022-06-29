@@ -106,6 +106,34 @@ CREATE TABLE IF NOT EXISTS `Hackathon2_db`.`user_has_project` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
+-- -----------------------------------------------------
+-- Table `Hackathon2_db`.`user_liked_project`
+-- -----------------------------------------------------
+
+
+
+CREATE TABLE IF NOT EXISTS `Hackathon2_db`.`user_liked_project` (
+  `user_Id` INT NOT NULL,
+  `project_Id` INT NOT NULL,
+  PRIMARY KEY (`user_Id`, `project_Id`),
+  INDEX `fk_user_liked_projet_projet1_idx` (`project_Id` ASC) VISIBLE,
+  INDEX `fk_user_liked_projet_user1_idx` (`user_Id` ASC) VISIBLE,
+  CONSTRAINT `fk_user_liked_projet_user1`
+    FOREIGN KEY (`user_Id`)
+    REFERENCES `Hackathon2_db`.`user` (`Id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_user_liked_projet_projet1`
+    FOREIGN KEY (`project_Id`)
+    REFERENCES `Hackathon2_db`.`project` (`Id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+
+
+
+
+
 
 -- -----------------------------------------------------
 -- Table `Hackathon2_db`.`new`
