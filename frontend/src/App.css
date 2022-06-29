@@ -1,56 +1,91 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap");
+
+:root {
+  --color_1: #e89759;
+  --color_2: #0f2334;
+  --color_dark: #183650;
+  --color_light: #e8e5e5;
+  --background-color: #f0f8ff;
+  --font-size-h1: 3.5rem;
+  --font-size-h2: 2.2rem;
+  --font-size-h3: 1.5rem;
+  --font-size-p: 1.3rem;
+  --border-radius: 5px;
+  --font-p: "Hind", sans-serif;
+  --font-h: "Montserrat", sans-serif;
+
+  --transition: all 400ms ease;
+}
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--background-color);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+h1,
+h2,
+h3 {
+  font-family: var(--font-h);
+  color: var(--color_1);
+}
+h1 {
+  font-size: var(--font-size-h1);
 }
 
-.App {
-  text-align: center;
+h2 {
+  font-size: var(--font-size-h2);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h3 {
+  font-size: var(--font-size-h3);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+p,
+a {
+  text-decoration: none;
+  font-size: var(--font-size-p);
+  color: var(--color_dark);
+  font-family: var(--font-p);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+a:hover {
+  font-size: var(--font-size-h3);
+  transition: var(--transition);
 }
 
-.App-link {
-  color: #61dafb;
+.btn-blue {
+  font-family: var(--font-p);
+  font-size: var(--font-size-p);
+  padding: 0.2rem 1.2rem;
+  border-radius: 5px;
+  background-color: var(--color_2);
+  color: var(--color_light);
+  transition: var(--transition);
+  border: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-orange {
+  font-family: var(--font-p);
+  font-size: var(--font-size-p);
+  padding: 0.2rem 1.2rem;
+  border-radius: 5px;
+  background-color: var(--color_1);
+  color: var(--color_light);
+  transition: var(--transition);
+  border: none;
 }
 
-button {
-  font-size: calc(10px + 2vmin);
+button:hover {
+  background-color: var(--background-color);
+  color: var(--color_dark);
+  border: 2px solid var(--color_2);
+}
+
+.btn-orange:hover {
+  border: 2px solid var(--color_1);
+  color: var(--color_1);
 }
