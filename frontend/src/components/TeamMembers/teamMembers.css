@@ -1,0 +1,27 @@
+#teamMembers {
+  height: auto;
+  padding: 5rem;
+  width: 50rem;
+  font-family: var(--font-p);
+}
+
+/* table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid #949494;
+  text-align: left;
+  padding: 1rem;
+}
+
+#row0 td {
+  background-color: var(--color_2);
+  color: var(--color_light);
+}
+
+td {
+  background-color: rgb(237, 238, 239);
+} */
