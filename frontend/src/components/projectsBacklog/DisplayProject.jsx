@@ -57,6 +57,27 @@ const DisplayProject = ({ project, user }) => {
     );
   };
 
+  const likeProjectButton = () => {
+    return (
+      <button
+        type="button"
+        className="btn-orange"
+        value={project.Id}
+        onClick={handleLike}
+      >
+        Like
+      </button>
+    );
+  };
+
+  const haslikedButton = () => {
+    return (
+      <button type="button" className="btn-orange" value={project.Id}>
+        You liked this project
+      </button>
+    );
+  };
+
   const allreadyJoined = () => {
     return (
       <button type="button" className="btn-greyed" value={project.Id}>
@@ -79,9 +100,7 @@ const DisplayProject = ({ project, user }) => {
             {hasJoined ? allreadyJoined() : joinProjectButton()}
           </div>
           <div className="like">
-            <button type="button" className="btn-orange" onClick={handleLike}>
-              Like
-            </button>
+            {hasLiked ? haslikedButton() : likeProjectButton()}
           </div>
         </div>
       </div>

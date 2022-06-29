@@ -5,7 +5,7 @@ class LikeProjectController {
     const newUserProject = req.body;
     console.error(newUserProject);
 
-    models.user_has_project
+    models.user_liked_project
       .insert(newUserProject)
       .then(([result]) => {
         res.status(201).send({ ...newUserProject, id: result.insertId });

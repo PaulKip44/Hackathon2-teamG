@@ -4,6 +4,7 @@ const {
   UserController,
   ProjectController,
   UserProjectController,
+  LikeProjectController,
 } = require("./controllers");
 
 const router = express.Router();
