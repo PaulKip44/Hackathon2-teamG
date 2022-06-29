@@ -4,6 +4,11 @@
   align-items: center;
 }
 
+.user-selection {
+  margin: 1rem;
+  text-align: center;
+}
+
 .project-synthesis {
   width: 80ch;
   display: flex;
