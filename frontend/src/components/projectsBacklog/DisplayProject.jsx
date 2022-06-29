@@ -4,6 +4,14 @@ import api from "@services/endpoint";
 const DisplayProject = ({ project, user }) => {
   const [hasJoined, setHasJoined] = useState(false);
   const [hasLiked, setHasLiked] = useState(false);
+  useEffect(() => {
+    const ENDPOINT = "/likeproject";
+    api.get(ENDPOINT).then((result) => {
+      console.error(result);
+      // to be implemented: check if this projectId is liked by this user
+      setHasLiked();
+    });
+  }, []);
 
   const handleJoin = (e) => {
     console.error(e.target.value);

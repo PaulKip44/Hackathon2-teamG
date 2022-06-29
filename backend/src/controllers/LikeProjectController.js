@@ -1,6 +1,18 @@
 const models = require("../models");
 
 class LikeProjectController {
+  static browse = (req, res) => {
+    models.user_liked_project
+      .findAll()
+      .then(([rows]) => {
+        res.send(rows);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
   static add = (req, res) => {
     const newUserProject = req.body;
     console.error(newUserProject);

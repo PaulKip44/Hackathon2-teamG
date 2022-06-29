@@ -28,6 +28,7 @@ router.delete("/projects/:id", ProjectController.delete);
 router.post("/userhasproject", UserProjectController.add);
 
 // ROUTES to like a project
+router.get("/likeproject", LikeProjectController.browse);
 router.post("/likeproject", LikeProjectController.add);
 
 module.exports = router;
