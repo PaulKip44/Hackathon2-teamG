@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap");
 
 :root {
-  --color_1: #e89759;
+  --color_1: #ff882d;
   --color_2: #0f2334;
   --color_dark: #183650;
   --color_light: #e8e5e5;
@@ -23,7 +23,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: var(--background-color);
+  
 }
 
 h1,
