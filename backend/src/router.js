@@ -40,6 +40,6 @@ router.delete("/news/:id", NewController.delete);
 
 // ROUTE AUTH
 
-router.post("/login", AuthController.create);
+router.post("/login", AuthController.login);
 
 module.exports = router;

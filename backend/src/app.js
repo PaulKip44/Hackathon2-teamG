@@ -1,6 +1,5 @@
 const express = require("express");
 const path = require("path");
-
 const cors = require("cors");
 
 // let's create express app
@@ -21,8 +20,11 @@ app.use(express.static(path.join(__dirname, "../public")));
 // load router
 
 const router = require("./router");
+const authRoutes = require("./router");
 
 app.use(router);
 
 // ready to export
+
+router.use("/auth", authRoutes);
 module.exports = app;
