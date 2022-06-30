@@ -14,7 +14,7 @@ function Nav() {
 
   const handleDisconnect = () => {
     endpoint
-      .get("/api/auth/logout")
+      .get("/auth/logout")
       .then(() => {
         localStorage.clear();
         setUser(undefined);
@@ -35,22 +35,12 @@ function Nav() {
             <li>Newsfeed</li>
             <li>Profil</li>
             <li>
-              <NavLink
-                to="/Login"
-                className="nav-link"
-                onClick={handleDisconnect}
-              >
+              <NavLink to="/" className="nav-link" onClick={handleDisconnect}>
                 <div className="sidenav-item">
                   <button className="button-no-style" type="submit">
                     Logout
                   </button>
                 </div>
-                <button
-                  type="submit"
-                  className="sidenav-content button-no-style"
-                >
-                  Déconnexion
-                </button>
               </NavLink>
             </li>
           </ul>
