@@ -26,11 +26,16 @@
 
 .btn-blue {
   margin: 1rem;
-  width: 8rem;
+  padding: 6rem;
+  width: 10rem;
+  font-size: 1rem;
+  text-align: center !important;
 }
+
 .btn-orange {
   margin: 1rem;
   width: 5rem;
+  font-size: 1rem;
 }
 
 .btn-greyed {
@@ -38,12 +43,30 @@
   font-size: var(--font-size-p);
   padding: 0.2rem 1.2rem;
   border-radius: 5px;
-  background-color: var(--color_2_disabled);
-
-  color: var(--color_light);
+  background-color: var(--color_light);
   transition: var(--transition);
-  border: none;
+  border: 2px solid var(--color_2);
   margin: 1rem;
+  width: 10rem;
+  text-align: center;
+}
+
+.btn-greyed2 {
+  margin: 1rem;
+  width: 5rem;
+  font-size: 1rem;
+  font-family: var(--font-p);
+  font-size: var(--font-size-p);
+  padding: 0.2rem 0.3rem;
+  border-radius: 5px;
+  background-color: var(--background-color);
+  border: 2px solid var(--color_1);
+  text-align: center;
+}
+
+.btn-greyed:hover {
+  background-color: var(--color_2);
+  color: var(--color_light);
 }
 
 h3 {
