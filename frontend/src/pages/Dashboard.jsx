@@ -12,7 +12,7 @@ function Dashboard() {
         <Nav />
       </div>
 
-      <div>
+      <div className="search-main">
         <SearchBarDashBoard />
         <TeamMembers />
       </div>
