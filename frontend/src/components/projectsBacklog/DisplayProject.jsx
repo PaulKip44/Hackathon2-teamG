@@ -1,22 +1,31 @@
 import React, { useEffect, useState } from "react";
 import api from "@services/endpoint";
 
-function DisplayProject({ project, user, liked }) {
+function DisplayProject({ project, user, liked, joined }) {
   const [hasJoined, setHasJoined] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
   const projectLiked = liked.filter((res) => res.project_Id === project.Id);
+  const projectJoined = joined.filter((res) => res.project_Id === project.Id);
 
   useEffect(() => {
     if (projectLiked.length === 0) {
-      console.error("This project is not liked");
+      // console.error("This project is not liked");
     } else {
-      console.error(projectLiked[0]);
+      // console.error(projectLiked[0]);
       setIsLiked(true);
     }
   }, [project.Id]);
 
+  useEffect(() => {
+    if (projectJoined.length === 0) {
+      console.error(`The project ${project.Id} is not joined by user ${user}`);
+    } else {
+      console.error(`The project ${project.Id} is joined by user ID ${user}`);
+      setHasJoined(true);
+    }
+  }, [project.Id]);
+
   const handleJoin = (e) => {
-    console.error(e.target.value);
     const ENDPOINT = "/userhasproject";
     const data = {
       userId: user,
@@ -37,6 +46,21 @@ function DisplayProject({ project, user, liked }) {
       });
   };
 
+  const handleUnjoin = (e) => {
+    const ENDPOINTUNJOIN = `/userunjoinproject/${e.target.value}/${user}`;
+    api
+      .delete(ENDPOINTUNJOIN)
+      .then((res) => {
+        if (res.status === 204) {
+          console.error(`User ID ${user} unjoined project ${project.Id}`);
+          setHasJoined(false);
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
+
   const handleLike = (e) => {
     const ENDPOINT = "/likeproject";
     const data = {
@@ -48,6 +72,7 @@ function DisplayProject({ project, user, liked }) {
       .then((result) => {
         if (result.status === 201) {
           console.error(`project with id ${project.Id} liked`);
+          window.location.reload();
         }
       })
       .catch((err) => {
@@ -110,7 +135,12 @@ function DisplayProject({ project, user, liked }) {
 
   const allreadyJoined = () => {
     return (
-      <button type="button" className="btn-greyed" value={project.Id}>
+      <button
+        type="button"
+        className="btn-greyed"
+        value={project.Id}
+        onClick={handleUnjoin}
+      >
         Unjoin
       </button>
     );

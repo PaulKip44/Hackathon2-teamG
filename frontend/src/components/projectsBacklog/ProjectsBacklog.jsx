@@ -4,11 +4,14 @@ import DisplayProject from "./DisplayProject";
 import "./ProjectsBacklog.css";
 
 function ProjectsBacklog() {
-  const [user, setUser] = useState(3);
+  const [user, setUser] = useState(1);
   const [users, setUsers] = useState([]);
   const [projects, setProjects] = useState([]);
   const [liked, setLiked] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [joined, setJoined] = useState([]);
+  const [isLikedLoading, setIsLikedLoading] = useState(true);
+  const [isJoinedLoading, setIsJoinedLoading] = useState(true);
+  const [canRender, setCanRender] = useState(false);
   const ENDPOINTPROJECTS = `/projects`;
   const ENDPOINTUSERS = `/users`;
 
@@ -16,11 +19,11 @@ function ProjectsBacklog() {
     api
       .get(ENDPOINTPROJECTS)
       .then((result) => {
-        console.error(result.data[0]);
         setProjects(result.data);
       })
       .catch((error) => console.error(error));
   }, []);
+
   useEffect(() => {
     api
       .get(ENDPOINTUSERS)
@@ -37,14 +40,32 @@ function ProjectsBacklog() {
       .then((result) => {
         setLiked(result.data);
         console.error(result.data);
-        setIsLoading(false);
+        setIsLikedLoading(false);
       })
       .catch((error) => console.error(error));
   }, [user]);
 
+  useEffect(() => {
+    const ENDPOINTJOIN = `/userhasproject/${user}`;
+    api
+      .get(ENDPOINTJOIN)
+      .then((result) => {
+        setJoined(result.data);
+        console.error(result.data);
+        setIsJoinedLoading(false);
+      })
+      .catch((error) => console.error(error));
+  }, [user]);
+
+  useEffect(() => {
+    if (isLikedLoading === false && isJoinedLoading === false) {
+      setCanRender(true);
+    } else setCanRender(false);
+  }, [isLikedLoading, isJoinedLoading, user]);
+
   return (
     <div>
-      {isLoading ? (
+      {canRender === false ? (
         "Loading..."
       ) : (
         <>
@@ -74,6 +95,7 @@ function ProjectsBacklog() {
                 key={project.Id}
                 user={user}
                 liked={liked}
+                joined={joined}
               />
             );
           })}

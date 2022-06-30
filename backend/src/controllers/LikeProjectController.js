@@ -13,6 +13,19 @@ class LikeProjectController {
       });
   };
 
+  static read = (req, res) => {
+    console.error(req.params.id);
+    models.user_liked_project
+      .findByUserId(req.params.id)
+      .then(([rows]) => {
+        res.send(rows);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
   static add = (req, res) => {
     const newUserProject = req.body;
     console.error(newUserProject);
@@ -29,8 +42,8 @@ class LikeProjectController {
   };
 
   static delete = (req, res) => {
-    models.project
-      .delete(req.params.id)
+    models.user_liked_project
+      .unlike(req.params.userId, req.params.projectId)
       .then(() => {
         res.sendStatus(204);
       })
