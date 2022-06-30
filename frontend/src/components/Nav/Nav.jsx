@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import endpoint from "../../services/endpoint";
@@ -32,7 +32,9 @@ function Nav() {
           <ul>
             <li>Map</li>
             <li>Projects</li>
-            <li>Newsfeed</li>
+            <Link to="/newsfeed">
+              <li>Newsfeed</li>
+            </Link>
             <li>Profil</li>
             <li>
               <NavLink to="/" className="nav-link" onClick={handleDisconnect}>
