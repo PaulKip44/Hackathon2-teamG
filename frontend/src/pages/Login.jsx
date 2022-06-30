@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useState } from "react";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo-apside.png";
 
 import "./Login.css";
 
@@ -8,6 +8,7 @@ function Login() {
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  // User Login info
   const database = [
     {
       username: "user1",
@@ -27,9 +28,9 @@ function Login() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const { thename, pass } = document.forms[0];
+    const { uname, pass } = document.forms[0];
 
-    const userData = database.find((user) => user.username === thename.value);
+    const userData = database.find((user) => user.username === uname.value);
 
     if (userData) {
       if (userData.password !== pass.value) {

@@ -20,3 +20,7 @@
   color: var(--color_light);
   padding-left: 20%;
 }
+
+.nav-list {
+  list-style: none;
+}
