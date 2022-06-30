@@ -11,7 +11,8 @@
   --font-size-h1: 3.5rem;
   --font-size-h2: 2.2rem;
   --font-size-h3: 1.5rem;
-  --font-size-p: clamp(1.2rem, 2vw, 1.8rem);
+  --font-size-nav: clamp(1.2rem, 2vw, 1.8rem);
+  --font-size-p: clamp(1rem, 2vw, 1.8rem);
   --border-radius: 5px;
   --font-p: "Hind", sans-serif;
   --font-h: "Montserrat", sans-serif;
@@ -45,7 +46,8 @@ h3 {
 
 p,
 a,
-li {
+li,
+td {
   text-decoration: none;
   font-size: var(--font-size-p);
   color: var(--color_dark);

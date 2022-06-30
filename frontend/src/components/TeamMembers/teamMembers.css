@@ -1,0 +1,17 @@
+#teamMembers {
+  height: auto;
+  padding: 5rem;
+  width: 55rem;
+  font-family: var(--font-p);
+  
+}
+
+#teamMembers .rdt_TableHeadRow {
+  background-color: var(--color_1);
+  font-weight: bolder;
+  font-size: 1rem;
+}
+
+#teamMembers h2 {
+  margin-bottom: 2rem;
+}
