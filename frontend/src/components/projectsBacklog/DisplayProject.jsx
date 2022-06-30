@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
 import api from "@services/endpoint";
 
-function DisplayProject({ project, user }) {
+function DisplayProject({ project, user, liked }) {
   const [hasJoined, setHasJoined] = useState(false);
-  const [hasLiked, setHasLiked] = useState(false);
+  const [isLiked, setIsLiked] = useState(false);
+  const projectLiked = liked.filter((res) => res.project_Id === project.Id);
+
   useEffect(() => {
-    const ENDPOINT = "/likeproject";
-    api.get(ENDPOINT).then((result) => {
-      console.error(result);
-      // to be implemented: check if this projectId is liked by this user
-      setHasLiked();
-    });
-  }, []);
+    if (projectLiked.length === 0) {
+      console.error("This project is not liked");
+    } else {
+      console.error(projectLiked[0]);
+      setIsLiked(true);
+    }
+  }, [project.Id]);
 
   const handleJoin = (e) => {
     console.error(e.target.value);
@@ -34,6 +36,7 @@ function DisplayProject({ project, user }) {
         console.error(err);
       });
   };
+
   const handleLike = (e) => {
     const ENDPOINT = "/likeproject";
     const data = {
@@ -44,12 +47,26 @@ function DisplayProject({ project, user }) {
       .post(ENDPOINT, data)
       .then((result) => {
         if (result.status === 201) {
-          setHasLiked(true);
+          console.error(`project with id ${project.Id} liked`);
         }
       })
       .catch((err) => {
         console.error(err);
       });
+  };
+
+  const handleUnlike = (e) => {
+    const ENDPOINTUNLIKE = `/unlikeproject/${e.target.value}/${user}`;
+    const data = {
+      userId: user,
+      projectId: parseInt(e.target.value, 10),
+    };
+    api.delete(ENDPOINTUNLIKE, data).then((res) => {
+      if (res.status === 204) {
+        console.error(`project with id ${project.Id} unliked`);
+        setIsLiked(false);
+      }
+    });
   };
 
   const joinProjectButton = () => {
@@ -80,8 +97,13 @@ function DisplayProject({ project, user }) {
 
   const haslikedButton = () => {
     return (
-      <button type="button" className="btn-orange" value={project.Id}>
-        You liked this project
+      <button
+        type="button"
+        className="btn-orange"
+        value={project.Id}
+        onClick={handleUnlike}
+      >
+        Unlike
       </button>
     );
   };
@@ -89,7 +111,7 @@ function DisplayProject({ project, user }) {
   const allreadyJoined = () => {
     return (
       <button type="button" className="btn-greyed" value={project.Id}>
-        Successfully joined
+        Unjoin
       </button>
     );
   };
@@ -109,7 +131,7 @@ function DisplayProject({ project, user }) {
           {hasJoined ? allreadyJoined() : joinProjectButton()}
         </div>
         <div className="like">
-          {hasLiked ? haslikedButton() : likeProjectButton()}
+          {isLiked ? haslikedButton() : likeProjectButton()}
         </div>
       </div>
     </div>

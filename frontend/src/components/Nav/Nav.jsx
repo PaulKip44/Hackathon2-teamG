@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import "./nav.css";
 
@@ -8,7 +9,9 @@ function Nav() {
       <img src={logo} className="logo" alt="apside logo" />
       <ul>
         <li>Map</li>
-        <li>Projects</li>
+        <li>
+          <Link to="/backlog">Projects</Link>
+        </li>
         <li>Newsfeed</li>
         <li>Profil</li>
       </ul>
