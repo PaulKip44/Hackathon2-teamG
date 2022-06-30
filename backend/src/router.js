@@ -3,6 +3,8 @@ const express = require("express");
 const {
   UserController,
   ProjectController,
+  UserProjectController,
+  LikeProjectController,
   AgenceController,
   NewController,
   AuthController,
@@ -24,6 +26,13 @@ router.get("/projects/:id", ProjectController.read);
 router.post("/projects", ProjectController.add);
 router.delete("/projects/:id", ProjectController.delete);
 
+// ROUTES to add, delete or update a user to a project
+
+router.post("/userhasproject", UserProjectController.add);
+
+// ROUTES to like a project
+router.get("/likeproject", LikeProjectController.browse);
+router.post("/likeproject", LikeProjectController.add);
 // ROUTES AGENCE
 
 router.get("/agences", AgenceController.browse);

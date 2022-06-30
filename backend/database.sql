@@ -106,6 +106,34 @@ CREATE TABLE IF NOT EXISTS `Hackathon2_db`.`user_has_project` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
+-- -----------------------------------------------------
+-- Table `Hackathon2_db`.`user_liked_project`
+-- -----------------------------------------------------
+
+
+
+CREATE TABLE IF NOT EXISTS `Hackathon2_db`.`user_liked_project` (
+  `user_Id` INT NOT NULL,
+  `project_Id` INT NOT NULL,
+  PRIMARY KEY (`user_Id`, `project_Id`),
+  INDEX `fk_user_liked_projet_projet1_idx` (`project_Id` ASC) VISIBLE,
+  INDEX `fk_user_liked_projet_user1_idx` (`user_Id` ASC) VISIBLE,
+  CONSTRAINT `fk_user_liked_projet_user1`
+    FOREIGN KEY (`user_Id`)
+    REFERENCES `Hackathon2_db`.`user` (`Id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_user_liked_projet_projet1`
+    FOREIGN KEY (`project_Id`)
+    REFERENCES `Hackathon2_db`.`project` (`Id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+
+
+
+
+
 
 -- -----------------------------------------------------
 -- Table `Hackathon2_db`.`new`
@@ -127,3 +155,13 @@ CREATE TABLE IF NOT EXISTS `Hackathon2_db`.`new` (
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+-- ajout de données misssions dans la table
+INSERT INTO `` (`Id`,`name`,`used_tools`,`progress_status`,`description`,`thematic`) VALUES (1,'The Idea Project','javascript','pending','This project is all about creating an awsome way to make people collaborate on amzing projects','ideas managemnt');
+INSERT INTO `` (`Id`,`name`,`used_tools`,`progress_status`,`description`,`thematic`) VALUES (2,'Solar roof creation','PV panels + electricity manager','finished','The idea is to create solar panels to be installed on the roof of each agency to generate our own electricit while managing storage and production of elctricity with our own algorithm  for enhanced efficiency and reduced carbon impact','renewable energy');
+INSERT INTO `` (`Id`,`name`,`used_tools`,`progress_status`,`description`,`thematic`) VALUES (3,'Light automation','Homebridge and raspberry pi','pending','Inefficient usage of lighting is responsible for ectricity overconsumption hence the idea to automate light extinction through the use of homebridge and a raspberry Pi','home automation');
+
+
+-- ajout d'utilisateur pour peupler la table user
+INSERT INTO `` (`Id`,`firstname`,`lastname`,`email`,`password`,`city`,`skill`,`type`,`agence_Id`) VALUES (1,'Basile','Roger','nantua@marcos.com','12345','Nirave','Project Management','developer',1);
+INSERT INTO `` (`Id`,`firstname`,`lastname`,`email`,`password`,`city`,`skill`,`type`,`agence_Id`) VALUES (3,'Elise','Nimare','elise.nimare@lycos.net','54321','Buis-Les-baronnies','Data Scientist','developer',2);
