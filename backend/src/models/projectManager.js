@@ -28,7 +28,7 @@ class projectManager extends AbstractManager {
       values += ",?";
       keyTable.push(newProject.thematic);
     }
-    console.error(newProject, tuples, values, keyTable);
+
     return this.connection.query(
       `insert into ${projectManager.table} (${tuples}) values (${values})`,
       keyTable
