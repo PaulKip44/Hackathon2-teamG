@@ -102,7 +102,7 @@ function DisplayProject({ project, user, liked, joined }) {
         value={project.Id}
         onClick={handleJoin}
       >
-        Join project
+        Join
       </button>
     );
   };
@@ -124,7 +124,7 @@ function DisplayProject({ project, user, liked, joined }) {
     return (
       <button
         type="button"
-        className="btn-orange"
+        className="btn-greyed2"
         value={project.Id}
         onClick={handleUnlike}
       >
