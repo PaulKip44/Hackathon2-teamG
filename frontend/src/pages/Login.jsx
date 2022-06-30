@@ -1,20 +1,24 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useState } from "react";
+import logo from "../assets/logo-apside.png";
+
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import api from "../services/endpoint";
 
-import logo from "../assets/logo.png";
+
 
 import "./Login.css";
 import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -34,6 +38,7 @@ function Login() {
     }
     if (!email && password) {
       toast.warning("Merci de renseigner votre email");
+
     }
   };
 
@@ -66,11 +71,13 @@ function Login() {
   );
 
   return (
-    <div className="login">
-      <div className="login-form">
-        <img src={logo} className="logo-img" alt="logo" />
-        <div className="title">Welcome</div>
-        {renderForm}
+    <div className="container-login">
+      <div className="login">
+        <div className="login-form">
+          <img src={logo} className="logo-img" alt="logo" />
+          <div className="title">Welcome</div>
+          {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+        </div>
       </div>
     </div>
   );

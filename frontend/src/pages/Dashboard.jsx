@@ -1,7 +1,9 @@
 import React from "react";
-import Nav from "@components/Nav/Nav";
+
+import Nav from "../components/Nav/Nav";
 import TeamMembers from "@components/TeamMembers/TeamMembers";
 import "./dashboard.css";
+
 
 function Dashboard() {
   return (

@@ -1,83 +1,90 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300&display=swap');
 
-body {
-  font-family: "Raleway", sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-size: cover;
-  height: 100vh;
-  width: 100vw;
-  background-color: white;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  background-color: white;
-  text-align: center;
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+    text-align: center;
+}
+
+.containter-login {
+        font-family: 'Raleway', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
+        height: 100vh;
+        width: 100vw;
+        background-color: white;
+        text-align: center;
 }
 
 .logo-img {
-  height: 5rem;
+    height: 5rem;
 }
 
 .login {
-  font-family: "Raleway", sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 20px;
-  height: 100vh;
-}
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    height: 100vh;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    height: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  
+  input[type="submit"] {
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    background: var(--color_1);
+    border: 1px solid var(--color_1);
+    color: #fff;
+    padding: 10px 20px;
+  }
+  
+  input[type="submit"]:hover {
+    background: #fd7c1a;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .login-form {
+    background-color: white;
+    padding: 5rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .list-container {
+    display: flex;
+  }
+  
+  .error {
+    color: red;
+    font-size: 12px;
+  }
+  
+  .title {
+    font-size: 25px;
+    margin-bottom: 20px;
+    text-align: center;
+    
+  }
+  
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 10px;
+  }
 
-input[type="text"],
-input[type="password"] {
-  height: 30px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-}
 
-input[type="submit"] {
-  margin-top: 10px;
-  cursor: pointer;
-  font-size: 15px;
-  background: var(--color_1);
-  border: 1px solid var(--color_1);
-  color: #fff;
-  padding: 10px 20px;
-}
-
-input[type="submit"]:hover {
-  background: #6cf0c2;
-}
-
-.button-container {
-  display: flex;
-  justify-content: center;
-}
-
-.login-form {
-  background-color: white;
-  padding: 5rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.list-container {
-  display: flex;
-}
-
-.error {
-  color: red;
-  font-size: 12px;
-}
-
-.title {
-  font-size: 25px;
-  margin-bottom: 20px;
-}
-
-.input-container {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin: 10px;
-}
