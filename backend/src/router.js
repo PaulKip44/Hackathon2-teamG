@@ -5,6 +5,7 @@ const {
   ProjectController,
   AgenceController,
   NewController,
+  AuthController,
 } = require("./controllers");
 
 const router = express.Router();
@@ -36,5 +37,9 @@ router.get("/news", NewController.browse);
 router.get("/news/:id", NewController.read);
 router.post("/news", NewController.add);
 router.delete("/news/:id", NewController.delete);
+
+// ROUTE AUTH
+
+router.post("/login", AuthController.login);
 
 module.exports = router;

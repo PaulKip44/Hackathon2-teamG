@@ -1,64 +1,62 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+
+import api from "../services/endpoint";
+
 import logo from "../assets/logo.png";
 
 import "./Login.css";
+import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
-  const [errorMessages, setErrorMessages] = useState({});
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const database = [
-    {
-      username: "user1",
-      password: "pass1",
-    },
-    {
-      username: "user2",
-      password: "pass2",
-    },
-  ];
+  const navigate = useNavigate();
 
-  const errors = {
-    uname: "invalid username",
-    pass: "invalid password",
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    const { thename, pass } = document.forms[0];
-
-    const userData = database.find((user) => user.username === thename.value);
-
-    if (userData) {
-      if (userData.password !== pass.value) {
-        setErrorMessages({ name: "pass", message: errors.pass });
-      } else {
-        setIsSubmitted(true);
-      }
-    } else {
-      setErrorMessages({ name: "uname", message: errors.uname });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (email && password) {
+      api
+        .post("auth/login", { email, password })
+        .then(() => {
+          toast.success("Vous êtes connecté !");
+          navigate("/dashboard");
+        })
+        .catch(() =>
+          toast.warning("Votre email ou votre mot de passe est faux")
+        );
+    }
+    if (email && !password) {
+      toast.warning("Merci de renseigner votre mot de passe");
+    }
+    if (!email && password) {
+      toast.warning("Merci de renseigner votre email");
     }
   };
-
-  const renderErrorMessage = (name) =>
-    name === errorMessages.name && (
-      <div className="error">{errorMessages.message}</div>
-    );
 
   const renderForm = (
     <div className="form">
       <form onSubmit={handleSubmit}>
         <div className="input-container">
           <label>Username </label>
-          <input type="text" name="uname" required />
-          {renderErrorMessage("uname")}
+          <input
+            className="input-user"
+            onChange={(e) => setEmail(e.target.value)}
+            type="text"
+            name="uname"
+          />
         </div>
         <div className="input-container">
           <label>Password </label>
-          <input type="password" name="pass" required />
-          {renderErrorMessage("pass")}
+          <input
+            className="input-password"
+            onChange={(e) => setPassword(e.target.value)}
+            type="password"
+            name="pass"
+          />
         </div>
         <div className="button-container">
           <input type="submit" />
@@ -72,7 +70,7 @@ function Login() {
       <div className="login-form">
         <img src={logo} className="logo-img" alt="logo" />
         <div className="title">Welcome</div>
-        {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+        {renderForm}
       </div>
     </div>
   );

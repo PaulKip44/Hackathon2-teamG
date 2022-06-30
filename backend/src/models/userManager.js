@@ -35,6 +35,15 @@ class userManager extends AbstractManager {
       keyTable
     );
   }
+
+  findByUserEmailPassword(email, password) {
+    return this.connection
+      .query(`select * from  ${this.table} where email = ? AND password = ?`, [
+        email,
+        password,
+      ])
+      .then(([result]) => result[0]);
+  }
 }
 
 module.exports = userManager;
