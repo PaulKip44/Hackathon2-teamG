@@ -11,6 +11,21 @@ class userHasProjectManager extends AbstractManager {
       [userId, projectId, role]
     );
   }
+
+  findByUserId(userId) {
+    return this.connection.query(
+      `SELECT user_Id, project_Id, role FROM ${this.table}
+      WHERE user_Id = ?`,
+      [userId]
+    );
+  }
+
+  deleteJoinedUser(projectId, userId) {
+    return this.connection.query(
+      `DELETE FROM ${this.table} WHERE user_Id = ? AND project_Id = ? `,
+      [userId, projectId]
+    );
+  }
 }
 
 module.exports = userHasProjectManager;
