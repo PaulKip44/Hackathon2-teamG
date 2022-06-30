@@ -157,14 +157,14 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 -- ajout de données misssions dans la table
-INSERT INTO `project` (`Id`,`name`,`used_tools`,`progress_status`,`description`,`thematic`) VALUES (1,'The Idea Project','[javascript, PHP, Node]','pending','This project is all about creating an awsome way to make people collaborate on amzing projects','ideas managemnt');
-INSERT INTO `project` (`Id`,`name`,`used_tools`,`progress_status`,`description`,`thematic`) VALUES (2,'Solar roof creation','[PV panels, electricity manager]','finished','The idea is to create solar panels to be installed on the roof of each agency to generate our own electricit while managing storage and production of elctricity with our own algorithm  for enhanced efficiency and reduced carbon impact','renewable energy');
-INSERT INTO `project` (`Id`,`name`,`used_tools`,`progress_status`,`description`,`thematic`) VALUES (3,'Light automation','[Homebridge, raspberry pi]','pending','Inefficient usage of lighting is responsible for ectricity overconsumption hence the idea to automate light extinction through the use of homebridge and a raspberry Pi','home automation');
+INSERT INTO `project` (`name`,`used_tools`,`progress_status`,`description`,`thematic`) VALUES ('The Idea Project','[javascript, PHP, Node]','pending','This project is all about creating an awsome way to make people collaborate on amzing projects','ideas managemnt');
+INSERT INTO `project` (`name`,`used_tools`,`progress_status`,`description`,`thematic`) VALUES ('Solar roof creation','[PV panels, electricity manager]','finished','The idea is to create solar panels to be installed on the roof of each agency to generate our own electricit while managing storage and production of elctricity with our own algorithm  for enhanced efficiency and reduced carbon impact','renewable energy');
+INSERT INTO `project` (`name`,`used_tools`,`progress_status`,`description`,`thematic`) VALUES ('Light automation','[Homebridge, raspberry pi]','pending','Inefficient usage of lighting is responsible for ectricity overconsumption hence the idea to automate light extinction through the use of homebridge and a raspberry Pi','home automation');
 
 -- ajout de données agence dans la table
-INSERT INTO `agence` (`city`,`coordonate`) VALUES ("Nantes",'[47.1305,1.3310]');
-INSERT INTO `agence` (`city`,`coordonate`) VALUES ("lyon",'[45.4528,4.4956]');
-INSERT INTO `agence` (`city`,`coordonate`) VALUES ("Paris",'[48.5124,2.2107]');
+INSERT INTO `agence` (`city`,`coordinates`) VALUES ("Nantes",'[47.1305,1.3310]');
+INSERT INTO `agence` (`city`,`coordinates`) VALUES ("lyon",'[45.4528,4.4956]');
+INSERT INTO `agence` (`city`,`coordinates`) VALUES ("Paris",'[48.5124,2.2107]');
 
 -- ajout de données affectation des projects -> agence
 INSERT INTO `project_has_agence` (`project_Id`,`agence_Id`) VALUES (1,1);
@@ -173,10 +173,10 @@ INSERT INTO `project_has_agence` (`project_Id`,`agence_Id`) VALUES (3,3);
 INSERT INTO `project_has_agence` (`project_Id`,`agence_Id`) VALUES (1,2);
 
 -- ajout d'utilisateur pour peupler la table user
-INSERT INTO `user` (`Id`,`firstname`,`lastname`,`email`,`password`,`city`,`skill`,`agence_Id`) VALUES (1,'Basile','Roger','nantua@marcos.com','12345','Nirave','developer',1);
-INSERT INTO `user` (`Id`,`firstname`,`lastname`,`email`,`password`,`city`,`skill`,`type`,`agence_Id`) VALUES (3,'Elise','Nimare','elise.nimare@lycos.net','12345','Buis-Les-baronnies',admin,'data analyst',2);
-INSERT INTO `user` (`Id`,`firstname`,`lastname`,`email`,`password`,`city`,`skill`,`agence_Id`) VALUES (1,'Paul','Sanchez','p.sanchez@wcs.com','12345','Lyon,','PO','developer',1);
-INSERT INTO `user` (`Id`,`firstname`,`lastname`,`email`,`password`,`city`,`skill`,`type`,`agence_Id`) VALUES (3,'Bernard','Dupont','bernard.dupont@google.net','12345','Paris',admin,'project manager',3);
+INSERT INTO `user` (`firstname`,`lastname`,`email`,`password`,`city`,`skill`,`agence_Id`) VALUES ('Basile','Roger','nantua@marcos.com','12345','Nirave','developer',1);
+INSERT INTO `user` (`firstname`,`lastname`,`email`,`password`,`city`,`skill`,`type`,`agence_Id`) VALUES ('Elise','Nimare','elise.nimare@lycos.net','12345','Buis-Les-baronnies',"admin",'data analyst',2);
+INSERT INTO `user` (`firstname`,`lastname`,`email`,`password`,`city`,`skill`,`agence_Id`) VALUES ('Paul','Sanchez','p.sanchez@wcs.com','12345','Lyon,','developer',1);
+INSERT INTO `user` (`firstname`,`lastname`,`email`,`password`,`city`,`skill`,`type`,`agence_Id`) VALUES ('Bernard','Dupont','bernard.dupont@google.net','12345','Paris',"admin",'project manager',3);
 
 -- ajout de données affectation des user -> projects
 INSERT INTO `user_has_project` (`user_Id`, `project_Id`, `role`) VALUES (1,1,"PO");
@@ -189,7 +189,7 @@ INSERT INTO `user_has_project` (`user_Id`, `project_Id`, `role`) VALUES (4,3,"de
 INSERT INTO `user_liked_project` (`user_Id`, `project_Id`) VALUES (1,1);
 INSERT INTO `user_liked_project` (`user_Id`, `project_Id`) VALUES (1,2);
 INSERT INTO `user_liked_project` (`user_Id`, `project_Id`) VALUES (1,3);
-INSERT INTO `user_liked_project` (`user_Id`, `project_Id`) VALUES (1,3);
+INSERT INTO `user_liked_project` (`user_Id`, `project_Id`) VALUES (4,3);
 INSERT INTO `user_liked_project` (`user_Id`, `project_Id`) VALUES (2,2);
 INSERT INTO `user_liked_project` (`user_Id`, `project_Id`) VALUES (2,3);
 INSERT INTO `user_liked_project` (`user_Id`, `project_Id`) VALUES (3,3);
