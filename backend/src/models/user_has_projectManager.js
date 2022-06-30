@@ -1,6 +1,6 @@
 const AbstractManager = require("./AbstractManager");
 
-class user_has_projectManager extends AbstractManager {
+class userHasProjectManager extends AbstractManager {
   static table = "user_has_project";
 
   insert(newProject) {
@@ -13,4 +13,4 @@ class user_has_projectManager extends AbstractManager {
   }
 }
 
-module.exports = user_has_projectManager;
+module.exports = userHasProjectManager;
