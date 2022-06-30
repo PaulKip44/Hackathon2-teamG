@@ -1,5 +1,5 @@
 import "./teamMembers.css";
-import endpoint from "@services/endpoint";
+import api from "@services/endpoint";
 import DataTable from "react-data-table-component";
 
 import React, { useEffect, useState } from "react";
@@ -8,7 +8,7 @@ function TeamMembers() {
   const [users, setUsers] = useState("");
 
   useEffect(() => {
-    endpoint
+    api
       .get("./users")
       .then((res) => setUsers(res.data.map((e) => e)))
       .catch((err) => console.error(err));

@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const endpoint = axios.create({
+const api = axios.create({
   baseURL: `${import.meta.env.VITE_BACKEND_URL}`,
 });
 
-export default endpoint;
+export default api;
