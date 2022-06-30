@@ -19,6 +19,7 @@
     "husky": "^7.0.0"
   },
   "dependencies": {
-    "react-data-table-component": "^7.5.2"
+    "react-data-table-component": "^7.5.2",
+    "react-icons": "^4.4.0"
   }
 }

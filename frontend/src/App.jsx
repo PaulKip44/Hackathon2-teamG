@@ -1,8 +1,9 @@
+import React from "react";
 import ProjectsBacklog from "@components/projectsBacklog/ProjectsBacklog";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "@pages/Dashboard";
 import Login from "@pages/Login";
-import React from "react";
+import NewsFeed from "@pages/NewsFeed";
 import "./App.css";
 import { CurrentUserContextProvider } from "./context/userContext";
 
@@ -15,6 +16,7 @@ function App() {
             <Route path="/" element={<Login />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/backlog" element={<ProjectsBacklog />} />
+            <Route path="/newsfeed" element={<NewsFeed />} />
           </Routes>
         </BrowserRouter>
       </div>
