@@ -29,11 +29,20 @@ class userManager extends AbstractManager {
       values += ",?";
       keyTable.push(newUser.type);
     }
-    console.error(newUser, tuples, values, keyTable);
+
     return this.connection.query(
       `insert into ${userManager.table} (${tuples}) values (${values})`,
       keyTable
     );
+  }
+
+  findByUserEmailPassword(email, password) {
+    return this.connection
+      .query(`select * from  ${this.table} where email = ? AND password = ?`, [
+        email,
+        password,
+      ])
+      .then(([result]) => result[0]);
   }
 }
 
