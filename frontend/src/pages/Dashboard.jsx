@@ -6,7 +6,6 @@ import "./dashboard.css";
 import IdeasBox from "@components/IdeasBox/IdeasBox";
 import SearchBarDashBoard from "../components/SearchBarDashBoard";
 
-
 function Dashboard() {
   return (
     <div id="dashboard">
