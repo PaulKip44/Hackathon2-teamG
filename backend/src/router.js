@@ -60,5 +60,6 @@ router.delete("/news/:id", NewController.delete);
 // ROUTE AUTH
 
 router.post("/login", AuthController.login);
+router.get("/logout", AuthController.logout);
 
 module.exports = router;

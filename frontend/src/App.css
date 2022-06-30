@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap");
 
 :root {
-  --color_1: #e89759;
+  --color_1: #ff8528;
   --color_2: #162f3f;
   --color_2_disabled: #405969;
   --color_dark: #242424;
@@ -48,9 +48,12 @@ h3 {
 p,
 a,
 li,
-td {
+td,
+input,
+button,
+label {
   text-decoration: none;
-  font-size: var(--font-size-p);
+  font-size: var(--font-size-);
   color: var(--color_dark);
   font-family: var(--font-p);
 }

@@ -1,0 +1,30 @@
+.search-container {
+  background-color: white;
+  padding: 1rem;
+}
+.search-bar {
+  display: flex;
+  align-items: center;
+  border-radius: 9999px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 2rem;
+  background-color: rgb(240, 246, 246);
+}
+.input-search {
+  background-color: rgb(240, 246, 246);
+  border-radius: 9999px;
+  border: none;
+  height: 2rem;
+  outline-width: none;
+  display: flex;
+  flex-grow: 1;
+}
+
+.search-icon {
+  height: 1rem;
+  margin-left: 0.8rem;
+  margin-top: 0.9rem;
+  margin-bottom: 0.8rem;
+  margin-right: 0.7rem;
+}

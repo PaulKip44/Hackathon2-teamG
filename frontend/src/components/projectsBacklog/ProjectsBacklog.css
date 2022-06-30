@@ -8,6 +8,9 @@
   align-items: center;
   justify-content: space-between;
 }
+.displayproject-main * {
+  text-align: left;
+}
 
 .project-synthesis {
   width: 40ch;
@@ -43,7 +46,7 @@
   margin: 1rem;
 }
 
-h2 {
+h3 {
   display: inline;
 }
 

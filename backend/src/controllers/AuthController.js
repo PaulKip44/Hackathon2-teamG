@@ -17,3 +17,7 @@ exports.login = (req, res) => {
     }
   });
 };
+
+exports.logout = (req, res) => {
+  res.clearCookie("token").sendStatus(200);
+};

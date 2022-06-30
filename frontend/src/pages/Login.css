@@ -1,6 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;300&display=swap");
 
-body {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.containter-login {
   font-family: "Raleway", sans-serif;
   display: flex;
   justify-content: center;
@@ -8,10 +15,6 @@ body {
   background-size: cover;
   height: 100vh;
   width: 100vw;
-  background-color: white;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
   background-color: white;
   text-align: center;
 }
@@ -47,7 +50,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background: #6cf0c2;
+  background: #fd7c1a;
 }
 
 .button-container {
@@ -73,6 +76,7 @@ input[type="submit"]:hover {
 .title {
   font-size: 25px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .input-container {

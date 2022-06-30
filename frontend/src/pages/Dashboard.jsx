@@ -1,7 +1,10 @@
 import React from "react";
-import Nav from "@components/Nav/Nav";
+
 import TeamMembers from "@components/TeamMembers/TeamMembers";
+import Nav from "@components/Nav/Nav";
 import "./dashboard.css";
+import IdeasBox from "@components/IdeasBox/IdeasBox";
+import SearchBarDashBoard from "../components/SearchBarDashBoard";
 
 function Dashboard() {
   return (
@@ -11,8 +14,10 @@ function Dashboard() {
       </div>
 
       <div>
+        <SearchBarDashBoard />
         <TeamMembers />
       </div>
+      <IdeasBox />
     </div>
   );
 }

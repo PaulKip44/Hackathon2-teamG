@@ -1,0 +1,30 @@
+.like-icon {
+  background-color: var(--color_1);
+}
+
+.like-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 6rem;
+  height: 3rem;
+  background-color: var(--color_1);
+  color: var(--color_light);
+  border-radius: var(--border-radius);
+  font-size: 1.5rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  cursor: pointer;
+}
+
+.like-button:hover {
+  transform: none;
+  background-color: var(--color_2);
+  color: var(--color_light);
+}
+
+.like-button img {
+  height: 2rem;
+  width: 2rem;
+  background-color: var(--color_1);
+}

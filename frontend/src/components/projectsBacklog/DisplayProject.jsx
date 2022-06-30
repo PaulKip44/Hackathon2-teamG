@@ -151,7 +151,7 @@ function DisplayProject({ project, user, liked, joined }) {
       <div className="project-synthesis">
         <details className="project-synthesis">
           <summary>
-            <h2>{project.name}</h2>
+            <h3>{project.name}</h3>
           </summary>
           <div>{project.description}</div>
         </details>

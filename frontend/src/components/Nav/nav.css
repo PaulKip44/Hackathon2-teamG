@@ -20,4 +20,9 @@
   color: var(--color_light);
   padding-left: 20%;
   font-size: var(--font-size-nav);
+  text-align: initial;
+}
+
+.nav-list {
+  list-style: none;
 }
