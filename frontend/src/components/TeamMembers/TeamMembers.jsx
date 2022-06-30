@@ -39,7 +39,9 @@ function TeamMembers() {
   return (
     <div id="teamMembers">
       <h2>Team Members</h2>
-      <DataTable columns={columns} data={users} />
+      <div className="table-teammembers">
+        <DataTable columns={columns} data={users} />
+      </div>
     </div>
   );
 }

@@ -5,7 +5,7 @@
 }
 
 #navbar {
-  height: 100vh;
+  height: 200vh;
   max-width: 20rem;
   min-width: 10rem;
   background-color: var(--color_2);
