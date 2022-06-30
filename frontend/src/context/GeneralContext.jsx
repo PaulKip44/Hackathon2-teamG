@@ -1,11 +1,11 @@
-import React, { createContext } from "react";
+// import React, { createContext } from "react";
 
-const GeneralContext = createContext();
+// const GeneralContext = createContext();
 
-const GeneralContextProvider = ({ children }) => {
-  return (
-    <GeneralContext.Provider value={{}}>{children}</GeneralContext.Provider>
-  );
-};
+// function GeneralContextProvider({ children }) {
+//   return (
+//     <GeneralContext.Provider value={{}}>{children}</GeneralContext.Provider>
+//   );
+// }
 
-export { GeneralContext };
+// export { GeneralContext, GeneralContextProvider };

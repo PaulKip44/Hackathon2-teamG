@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import api from "@services/endpoint";
 
-const DisplayProject = ({ project, user }) => {
+function DisplayProject({ project, user }) {
   const [hasJoined, setHasJoined] = useState(false);
   const [hasLiked, setHasLiked] = useState(false);
   useEffect(() => {
@@ -31,7 +31,7 @@ const DisplayProject = ({ project, user }) => {
         }
       })
       .catch((err) => {
-        console.error(error);
+        console.error(err);
       });
   };
   const handleLike = (e) => {
@@ -48,7 +48,7 @@ const DisplayProject = ({ project, user }) => {
         }
       })
       .catch((err) => {
-        console.error(error);
+        console.error(err);
       });
   };
 
@@ -95,27 +95,25 @@ const DisplayProject = ({ project, user }) => {
   };
 
   return (
-    <>
-      <div className="displayproject-main">
-        <div className="project-synthesis">
-          <details className="project-synthesis">
-            <summary>
-              <h2>{project.name}</h2>
-            </summary>
-            <div>{project.description}</div>
-          </details>
+    <div className="displayproject-main">
+      <div className="project-synthesis">
+        <details className="project-synthesis">
+          <summary>
+            <h2>{project.name}</h2>
+          </summary>
+          <div>{project.description}</div>
+        </details>
+      </div>
+      <div className="feedback">
+        <div className="rejoindre">
+          {hasJoined ? allreadyJoined() : joinProjectButton()}
         </div>
-        <div className="feedback">
-          <div className="rejoindre">
-            {hasJoined ? allreadyJoined() : joinProjectButton()}
-          </div>
-          <div className="like">
-            {hasLiked ? haslikedButton() : likeProjectButton()}
-          </div>
+        <div className="like">
+          {hasLiked ? haslikedButton() : likeProjectButton()}
         </div>
       </div>
-    </>
+    </div>
   );
-};
+}
 
 export default DisplayProject;

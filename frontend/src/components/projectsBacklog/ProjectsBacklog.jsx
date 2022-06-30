@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
+import api from "@services/endpoint";
 import DisplayProject from "./DisplayProject";
 import "./ProjectsBacklog.css";
-import api from "@services/endpoint";
 
-const ProjectsBacklog = () => {
+function ProjectsBacklog() {
   const [user, setUser] = useState(1);
   const [users, setUsers] = useState([]);
   const [projects, setProjects] = useState([]);
@@ -31,10 +31,10 @@ const ProjectsBacklog = () => {
           }}
         >
           <option value="">-- Please select a user</option>
-          {users.map((user) => {
+          {users.map((usermap) => {
             return (
-              <option value={user.Id}>
-                {user.firstname} {user.lastname}
+              <option value={usermap.Id}>
+                {usermap.firstname} {usermap.lastname}
               </option>
             );
           })}
@@ -47,6 +47,6 @@ const ProjectsBacklog = () => {
       })}
     </>
   );
-};
+}
 
 export default ProjectsBacklog;
