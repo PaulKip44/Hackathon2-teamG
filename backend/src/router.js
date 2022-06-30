@@ -21,8 +21,10 @@ router.delete("/users/:id", UserController.delete);
 
 // ROUTES PROJECT
 
+// on router get project/:id : readUserOnProject get all data of "project" table, AND
+// more join table (user, user_as_project , and agence)
+router.get("/projects/:id", ProjectController.readUserOnProject);
 router.get("/projects", ProjectController.browse);
-router.get("/projects/:id", ProjectController.read);
 router.post("/projects", ProjectController.add);
 router.delete("/projects/:id", ProjectController.delete);
 

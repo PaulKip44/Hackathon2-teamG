@@ -22,7 +22,7 @@ function ProjectsBacklog() {
         setProjects(result.data);
       })
       .catch((error) => console.error(error));
-  }, []);
+  }, [user]);
 
   useEffect(() => {
     api
@@ -65,29 +65,32 @@ function ProjectsBacklog() {
 
   return (
     <div>
+      <div className="user-selection">
+        <select
+          name="user"
+          id="user-select"
+          onChange={(e) => {
+            setUser(e.target.value);
+            setIsLikedLoading(true);
+            setTimeout(() => {
+              setIsLikedLoading(false);
+            }, 20);
+          }}
+        >
+          <option value="">-- Please select a user</option>
+          {users.map((usermap) => {
+            return (
+              <option key={usermap.Id} value={usermap.Id}>
+                {usermap.firstname} {usermap.lastname}
+              </option>
+            );
+          })}
+        </select>
+      </div>
       {canRender === false ? (
         "Loading..."
       ) : (
         <>
-          <div className="user-selection">
-            <select
-              name="user"
-              id="user-select"
-              onChange={(e) => {
-                setUser(e.target.value);
-              }}
-            >
-              <option value="">-- Please select a user</option>
-              {users.map((usermap) => {
-                return (
-                  <option key={usermap.Id} value={usermap.Id}>
-                    {usermap.firstname} {usermap.lastname}
-                  </option>
-                );
-              })}
-            </select>
-          </div>
-
           {projects.map((project) => {
             return (
               <DisplayProject

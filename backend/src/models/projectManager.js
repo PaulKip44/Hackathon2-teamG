@@ -34,6 +34,18 @@ class projectManager extends AbstractManager {
       keyTable
     );
   }
+
+  findUserOnProject(id) {
+    return this.connection.query(
+      `SELECT p.*, up.user_Id, u.firstname, u.lastname, up.role, a.city FROM ${projectManager.table} AS p
+      INNER JOIN user_has_project AS up ON p.Id = up.project_Id 
+      INNER JOIN user AS u ON up.user_Id = u.Id
+      INNER JOIN agence AS a ON u.agence_Id = a.Id
+      WHERE p.Id= ?
+      `,
+      [id]
+    );
+  }
 }
 
 module.exports = projectManager;
