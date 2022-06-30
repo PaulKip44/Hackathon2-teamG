@@ -4,7 +4,7 @@ import DisplayProject from "./DisplayProject";
 import "./ProjectsBacklog.css";
 
 function ProjectsBacklog() {
-  const [user, setUser] = useState(1);
+  const [user, setUser] = useState(3);
   const [users, setUsers] = useState([]);
   const [projects, setProjects] = useState([]);
   const [liked, setLiked] = useState([]);
