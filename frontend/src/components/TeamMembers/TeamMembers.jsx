@@ -39,30 +39,6 @@ function TeamMembers() {
   return (
     <div id="teamMembers">
       <h2>Team Members</h2>
-
-      {/* <table id="simple-board">
-        <thead>
-          <tr id="row0">
-            <td id="cell0-0">Firstname</td>
-            <td id="cell0-1">Name</td>
-            <td id="cell0-2">Role</td>
-            <td id="cell0-3">Office Location</td>
-            <td id="cell0-4">Role</td>
-          </tr>
-          <tr id="row1">
-            {users.map((user) => (
-              <td id="cell1-0">{user.firstname}</td>
-            ))}
-          </tr>
-
-          <tr id="row2">
-            <td id="cell2-0"></td>
-            <td id="cell2-1"></td>
-            <td id="cell2-2"></td>
-          </tr>
-        </thead>
-      </table> */}
-
       <DataTable columns={columns} data={users} />
     </div>
   );
