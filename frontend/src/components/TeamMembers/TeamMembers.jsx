@@ -1,16 +1,19 @@
 import "./teamMembers.css";
 import api from "@services/endpoint";
 import DataTable from "react-data-table-component";
+import { useParams } from "react-router-dom";
 
 import React, { useEffect, useState } from "react";
 
 function TeamMembers() {
   const [users, setUsers] = useState("");
+  const params = useParams();
 
   useEffect(() => {
     api
-      .get("./users")
+      .get(`/projects/${params.projectId}`)
       .then((res) => setUsers(res.data.map((e) => e)))
+      // then((res) => console.log(res.data))
       .catch((err) => console.error(err));
   }, []);
 
@@ -28,12 +31,12 @@ function TeamMembers() {
     {
       id: 3,
       name: "Role",
-      selector: (row) => row.type,
+      selector: (row) => row.role,
     },
     {
       id: 4,
       name: "Office Location",
-      selector: (row) => row.agence_Id,
+      selector: (row) => row.city,
     },
   ];
   return (
