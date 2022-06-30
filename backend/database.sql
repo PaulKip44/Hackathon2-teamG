@@ -65,20 +65,20 @@ CREATE TABLE IF NOT EXISTS `Hackathon2_db`.`project` (
 
 
 -- -----------------------------------------------------
--- Table `Hackathon2_db`.`projet_has_agence`
+-- Table `Hackathon2_db`.`project_has_agence`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Hackathon2_db`.`projet_has_agence` (
-  `projet_Id` INT NOT NULL,
+CREATE TABLE IF NOT EXISTS `Hackathon2_db`.`project_has_agence` (
+  `project_Id` INT NOT NULL,
   `agence_Id` INT NOT NULL,
-  PRIMARY KEY (`projet_Id`, `agence_Id`),
-  INDEX `fk_projet_has_agence_agence1_idx` (`agence_Id` ASC) VISIBLE,
-  INDEX `fk_projet_has_agence_projet1_idx` (`projet_Id` ASC) VISIBLE,
-  CONSTRAINT `fk_projet_has_agence_projet1`
-    FOREIGN KEY (`projet_Id`)
+  PRIMARY KEY (`project_Id`, `agence_Id`),
+  INDEX `fk_projct_has_agence_agence1_idx` (`agence_Id` ASC) VISIBLE,
+  INDEX `fk_project_has_agence_project1_idx` (`project_Id` ASC) VISIBLE,
+  CONSTRAINT `fk_project_has_agence_project1`
+    FOREIGN KEY (`project_Id`)
     REFERENCES `Hackathon2_db`.`project` (`Id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_projet_has_agence_agence1`
+  CONSTRAINT `fk_project_has_agence_agence1`
     FOREIGN KEY (`agence_Id`)
     REFERENCES `Hackathon2_db`.`agence` (`Id`)
     ON DELETE NO ACTION
@@ -93,14 +93,14 @@ CREATE TABLE IF NOT EXISTS `Hackathon2_db`.`user_has_project` (
   `project_Id` INT NOT NULL,
   `role` VARCHAR(100) NULL,
   PRIMARY KEY (`user_Id`, `project_Id`),
-  INDEX `fk_user_has_projet_projet1_idx` (`project_Id` ASC) VISIBLE,
-  INDEX `fk_user_has_projet_user1_idx` (`user_Id` ASC) VISIBLE,
-  CONSTRAINT `fk_user_has_projet_user1`
+  INDEX `fk_user_has_project_project1_idx` (`project_Id` ASC) VISIBLE,
+  INDEX `fk_user_has_project_user1_idx` (`user_Id` ASC) VISIBLE,
+  CONSTRAINT `fk_user_has_project_user1`
     FOREIGN KEY (`user_Id`)
     REFERENCES `Hackathon2_db`.`user` (`Id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_user_has_projet_projet1`
+  CONSTRAINT `fk_user_has_project_project1`
     FOREIGN KEY (`project_Id`)
     REFERENCES `Hackathon2_db`.`project` (`Id`)
     ON DELETE NO ACTION
@@ -116,14 +116,14 @@ CREATE TABLE IF NOT EXISTS `Hackathon2_db`.`user_liked_project` (
   `user_Id` INT NOT NULL,
   `project_Id` INT NOT NULL,
   PRIMARY KEY (`user_Id`, `project_Id`),
-  INDEX `fk_user_liked_projet_projet1_idx` (`project_Id` ASC) VISIBLE,
-  INDEX `fk_user_liked_projet_user1_idx` (`user_Id` ASC) VISIBLE,
-  CONSTRAINT `fk_user_liked_projet_user1`
+  INDEX `fk_user_liked_project_project1_idx` (`project_Id` ASC) VISIBLE,
+  INDEX `fk_user_liked_project_user1_idx` (`user_Id` ASC) VISIBLE,
+  CONSTRAINT `fk_user_liked_project_user1`
     FOREIGN KEY (`user_Id`)
     REFERENCES `Hackathon2_db`.`user` (`Id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_user_liked_projet_projet1`
+  CONSTRAINT `fk_user_liked_project_project1`
     FOREIGN KEY (`project_Id`)
     REFERENCES `Hackathon2_db`.`project` (`Id`)
     ON DELETE NO ACTION

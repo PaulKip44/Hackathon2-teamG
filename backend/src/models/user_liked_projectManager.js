@@ -1,5 +1,6 @@
 const AbstractManager = require("./AbstractManager");
 
+// eslint-disable-next-line camelcase
 class user_liked_projectManager extends AbstractManager {
   static table = "user_liked_project";
 
@@ -13,4 +14,5 @@ class user_liked_projectManager extends AbstractManager {
   }
 }
 
+// eslint-disable-next-line camelcase
 module.exports = user_liked_projectManager;
