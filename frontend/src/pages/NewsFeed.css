@@ -1,0 +1,11 @@
+.feed-dashboard {
+  display: flex;
+  flex-direction: row;
+}
+
+.feed-search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 5rem;
+}

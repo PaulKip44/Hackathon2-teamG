@@ -2,7 +2,6 @@ import React from "react";
 import FeedLikeButtonOne from "./FeedLikeButtonOne";
 import "./FeedOne.css";
 
-// eslint-disable-next-line react/prop-types
 function FeedOne({ image, contents }) {
   return (
     <div className="feed">
