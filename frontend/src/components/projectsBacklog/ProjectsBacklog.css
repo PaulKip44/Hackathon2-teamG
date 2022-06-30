@@ -8,9 +8,12 @@
   align-items: center;
   justify-content: space-between;
 }
+.displayproject-main * {
+  text-align: left;
+}
 
 .project-synthesis {
-  width: 65ch;
+  width: 40ch;
   text-align: left;
 }
 
@@ -23,9 +26,11 @@
 
 .btn-blue {
   margin: 1rem;
+  width: 8rem;
 }
 .btn-orange {
   margin: 1rem;
+  width: 5rem;
 }
 
 .btn-greyed {
@@ -41,7 +46,7 @@
   margin: 1rem;
 }
 
-h2 {
+h3 {
   display: inline;
 }
 

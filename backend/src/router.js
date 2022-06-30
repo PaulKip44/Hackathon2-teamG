@@ -28,10 +28,20 @@ router.delete("/projects/:id", ProjectController.delete);
 
 // ROUTES to add, delete or update a user to a project
 
+router.get("/userhasproject/:userId", UserProjectController.browse);
 router.post("/userhasproject", UserProjectController.add);
+router.delete(
+  "/userunjoinproject/:projectId/:userId",
+  UserProjectController.delete
+);
 
 // ROUTES to like a project
 router.get("/likeproject", LikeProjectController.browse);
+router.get("/likeproject/:id", LikeProjectController.read);
+router.delete(
+  "/unlikeproject/:projectId/:userId",
+  LikeProjectController.delete
+);
 router.post("/likeproject", LikeProjectController.add);
 // ROUTES AGENCE
 
