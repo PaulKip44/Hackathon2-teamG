@@ -4,19 +4,19 @@
     box-sizing: border-box;
     margin:0;
     padding: 0;
-    background-color:white;
     text-align: center;
 }
 
-body {
-    font-family: 'Raleway', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
-    background-color: white;
+.containter-login {
+        font-family: 'Raleway', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
+        height: 100vh;
+        width: 100vw;
+        background-color: white;
+        text-align: center;
 }
 
 .logo-img {
@@ -76,6 +76,7 @@ body {
   .title {
     font-size: 25px;
     margin-bottom: 20px;
+    text-align: center;
     
   }
   
@@ -85,3 +86,4 @@ body {
     gap: 8px;
     margin: 10px;
   }
+

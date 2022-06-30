@@ -69,11 +69,13 @@ function Login() {
   );
 
   return (
-    <div className="login">
-      <div className="login-form">
-        <img src={logo} className="logo-img" alt="logo" />
-        <div className="title">Welcome</div>
-        {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+    <div className="container-login">
+      <div className="login">
+        <div className="login-form">
+          <img src={logo} className="logo-img" alt="logo" />
+          <div className="title">Welcome</div>
+          {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+        </div>
       </div>
     </div>
   );
