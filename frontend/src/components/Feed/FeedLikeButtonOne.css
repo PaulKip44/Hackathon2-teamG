@@ -14,6 +14,7 @@
   font-size: 1.5rem;
   margin-right: 2rem;
   margin-left: 2rem;
+  cursor: pointer;
 }
 
 .like-button:hover {
