@@ -11,6 +11,7 @@ function Nav() {
         <li>Projects</li>
         <li>Newsfeed</li>
         <li>Profil</li>
+        <li>Logout</li>
       </ul>
     </div>
   );
