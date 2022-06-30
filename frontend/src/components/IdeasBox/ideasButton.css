@@ -1,0 +1,19 @@
+#ideasButton .text {
+  background-color: var(--color_1);
+  padding: 0.2rem 1rem;
+  font-size: var(--font-size-small);
+  border-radius: var(--border-radius);
+}
+
+#ideasButton {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+#ideasButton button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding-left: 0.5rem;
+}

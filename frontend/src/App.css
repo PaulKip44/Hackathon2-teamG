@@ -48,9 +48,12 @@ h3 {
 p,
 a,
 li,
-td {
+td,
+input,
+button,
+label {
   text-decoration: none;
-  font-size: var(--font-size-p);
+  font-size: var(--font-size-);
   color: var(--color_dark);
   font-family: var(--font-p);
 }
