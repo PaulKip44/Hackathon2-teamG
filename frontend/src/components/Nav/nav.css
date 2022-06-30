@@ -6,7 +6,7 @@
 
 #navbar {
   height: 100vh;
-  max-width: 20%;
+  max-width: 20rem;
   min-width: 10rem;
   background-color: var(--color_2);
   display: flex;
@@ -19,4 +19,5 @@
   line-height: 4rem;
   color: var(--color_light);
   padding-left: 20%;
+  font-size: var(--font-size-nav);
 }
