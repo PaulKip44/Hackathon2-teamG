@@ -1,27 +1,23 @@
 #comments-list {
-  background-color: rgba(206, 205, 205, 0.169);
-  text-align: left;
+  background-color: rgba(206, 205, 205, 0.472);
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  overflow: scroll;
-  padding: 1rem;
+
+  padding: 2rem;
 }
-#comments-list h3 {
-  text-align: left;
-  padding-bottom: 1rem;
-}
-.comments-container {
-  text-align: left;
-  color: black;
-}
+
 #comments-list .comment {
   border: solid 0.5px black;
-
-  margin-bottom: 1rem;
-}
-#comments-list p {
   padding: 1rem;
+  margin-top: 2rem;
 }
+
 #comments-list p:nth-child(1) {
   border-bottom: dotted 0.1px black;
+  color: rgb(86, 86, 86);
+}
+
+#comments-list p:nth-child(2) {
+  padding-top: 1rem;
+  color: black;
 }

@@ -1,8 +1,9 @@
 #ideasButton .text {
-  background-color: var(--color_1);
+  background-color: var(--color_2);
   padding: 0.2rem 1rem;
   font-size: var(--font-size-small);
   border-radius: var(--border-radius);
+  color: var(--color_light);
 }
 
 #ideasButton {
@@ -11,9 +12,13 @@
   position: relative;
 }
 
-#ideasButton button {
-  border: none;
-  background-color: transparent;
+#ideasButton .plus-btn {
+  color: var(--color_2);
   cursor: pointer;
   padding-left: 0.5rem;
+}
+
+#ideasButton .plus-btn:hover {
+  color: var(--color_1);
+  transition: var(--transition);
 }

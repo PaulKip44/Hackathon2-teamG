@@ -6,13 +6,14 @@ function IdeasButton({ isForm, setIsForm }) {
   return (
     <div id="ideasButton">
       <p className="text">Ideas Box</p>
-      <button
-        type="button"
+      <div
+        aria-hidden="true"
         className="plus-btn"
         onClick={() => setIsForm(!isForm)}
+        onKeyDown={() => setIsForm(!isForm)}
       >
-        <BsPlusCircleFill />
-      </button>
+        <BsPlusCircleFill size={32} />
+      </div>
     </div>
   );
 }

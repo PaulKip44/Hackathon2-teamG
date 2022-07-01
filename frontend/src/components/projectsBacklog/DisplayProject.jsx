@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import api from "@services/endpoint";
+import { BsBoxArrowInRight } from "react-icons/bs";
 
 function DisplayProject({ project, user, liked, joined }) {
   const [hasJoined, setHasJoined] = useState(false);
@@ -155,6 +157,10 @@ function DisplayProject({ project, user, liked, joined }) {
           </summary>
           <div>{project.description}</div>
         </details>
+        <Link to={`/dashboard/${project.Id}`}>
+          {" "}
+          <BsBoxArrowInRight size={30} />{" "}
+        </Link>
       </div>
       <div className="feedback">
         <div className="rejoindre">

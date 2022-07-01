@@ -13,7 +13,7 @@ function TeamMembers() {
     api
       .get(`/projects/${params.projectId}`)
       .then((res) => setUsers(res.data.map((e) => e)))
-      // then((res) => console.log(res.data))
+      // then((res) => console.log(res))
       .catch((err) => console.error(err));
   }, []);
 

@@ -15,7 +15,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/dashboard/:projectId" element={<Dashboard />} />
-            <Route path="/backlog" element={<ProjectsBacklog />} />
+            <Route path="/dashboard" element={<ProjectsBacklog />} />
             <Route path="/newsfeed" element={<NewsFeed />} />
           </Routes>
         </BrowserRouter>
