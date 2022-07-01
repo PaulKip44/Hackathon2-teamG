@@ -30,7 +30,9 @@ function Nav() {
         <div id="navbar">
           <img src={logo} className="logo" alt="apside logo" />
           <ul>
-            <li>Map</li>
+            <NavLink to="/map">
+              <li>Map</li>
+            </NavLink>
             <NavLink to="/dashboard">
               <li>Projects</li>
             </NavLink>
