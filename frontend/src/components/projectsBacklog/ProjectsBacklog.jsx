@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import api from "@services/endpoint";
-import DisplayProject from "./DisplayProject";
 import "./ProjectsBacklog.css";
+import Nav from "@components/Nav/Nav";
+import SearchBarDashBoard from "@components/SearchBarDashBoard";
+import DisplayProject from "./DisplayProject";
 
 function ProjectsBacklog() {
   const [user, setUser] = useState(3);
@@ -64,46 +66,51 @@ function ProjectsBacklog() {
   }, [isLikedLoading, isJoinedLoading, user]);
 
   return (
-    <div>
-      <div className="user-selection">
-        <select
-          name="user"
-          id="user-select"
-          onChange={(e) => {
-            setUser(e.target.value);
-            setIsLikedLoading(true);
-            setTimeout(() => {
-              setIsLikedLoading(false);
-            }, 20);
-          }}
-        >
-          <option value="">-- Please select a user</option>
-          {users.map((usermap) => {
-            return (
-              <option key={usermap.Id} value={usermap.Id}>
-                {usermap.firstname} {usermap.lastname}
-              </option>
-            );
-          })}
-        </select>
+    <div id="projects-container">
+      <Nav />
+
+      <div className="content">
+        <SearchBarDashBoard />
+        <div className="user-selection">
+          <select
+            name="user"
+            id="user-select"
+            onChange={(e) => {
+              setUser(e.target.value);
+              setIsLikedLoading(true);
+              setTimeout(() => {
+                setIsLikedLoading(false);
+              }, 20);
+            }}
+          >
+            <option value="">-- Please select a user</option>
+            {users.map((usermap) => {
+              return (
+                <option key={usermap.Id} value={usermap.Id}>
+                  {usermap.firstname} {usermap.lastname}
+                </option>
+              );
+            })}
+          </select>
+        </div>
+        {canRender === false ? (
+          "Loading..."
+        ) : (
+          <>
+            {projects.map((project) => {
+              return (
+                <DisplayProject
+                  project={project}
+                  key={project.Id}
+                  user={user}
+                  liked={liked}
+                  joined={joined}
+                />
+              );
+            })}
+          </>
+        )}
       </div>
-      {canRender === false ? (
-        "Loading..."
-      ) : (
-        <>
-          {projects.map((project) => {
-            return (
-              <DisplayProject
-                project={project}
-                key={project.Id}
-                user={user}
-                liked={liked}
-                joined={joined}
-              />
-            );
-          })}
-        </>
-      )}
     </div>
   );
 }

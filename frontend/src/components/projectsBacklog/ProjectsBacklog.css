@@ -1,5 +1,14 @@
+#projects-container {
+  display: flex;
+}
+.content {
+  padding: 2rem;
+  width: 100vh;
+}
+
 .user-selection {
-  margin: 1rem;
+  display: flex;
+  padding: 1.5rem;
   text-align: center;
 }
 .displayproject-main {
@@ -27,7 +36,7 @@
 .btn-blue {
   margin: 1rem;
   padding: 6rem;
-  width: 10rem;
+  width: 5.5rem;
   font-size: 1rem;
   text-align: center !important;
 }
@@ -36,6 +45,7 @@
   margin: 1rem;
   width: 5rem;
   font-size: 1rem;
+  text-align: center;
 }
 
 .btn-greyed {
@@ -47,7 +57,7 @@
   transition: var(--transition);
   border: 2px solid var(--color_2);
   margin: 1rem;
-  width: 10rem;
+  width: 5.5rem;
   text-align: center;
 }
 

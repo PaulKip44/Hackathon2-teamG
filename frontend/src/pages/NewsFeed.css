@@ -6,6 +6,6 @@
 .feed-search {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin-left: 5rem;
+  gap: 2rem;
+  padding: 2rem;
 }
