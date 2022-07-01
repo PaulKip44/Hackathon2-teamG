@@ -5,7 +5,7 @@
 }
 
 #navbar {
-  height: 100vh;
+  height: 100%;
   max-width: 20rem;
   min-width: 10rem;
   background-color: var(--color_2);
@@ -25,4 +25,12 @@
 
 .nav-list {
   list-style: none;
+}
+
+.btn-logout {
+  padding: 0 1rem;
+}
+
+.sidenav-item .btn-logout :hover {
+  background-color: var(--color_2);
 }

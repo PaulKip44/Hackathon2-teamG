@@ -12,8 +12,8 @@
   --font-size-h1: 3.5rem;
   --font-size-h2: 2.2rem;
   --font-size-h3: 1.5rem;
-  --font-size-nav: clamp(1.2rem, 2vw, 1.8rem);
-  --font-size-p: clamp(1rem, 2vw, 1.8rem);
+  --font-size-nav: clamp(1.2rem, 2vw, 1.4rem);
+  --font-size-p: clamp(0.8rem, 2vw, 0.95rem);
   --border-radius: 5px;
   --font-p: "Hind", sans-serif;
   --font-h: "Montserrat", sans-serif;
@@ -25,6 +25,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+#navbar {
+  height: 80vw;
 }
 
 h1,
@@ -51,9 +54,9 @@ li,
 td,
 input,
 button,
-label {
+details {
   text-decoration: none;
-  font-size: var(--font-size-);
+  font-size: var(--font-size-p);
   color: var(--color_dark);
   font-family: var(--font-p);
 }

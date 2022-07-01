@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import endpoint from "../../services/endpoint";
@@ -30,16 +30,20 @@ function Nav() {
         <div id="navbar">
           <img src={logo} className="logo" alt="apside logo" />
           <ul>
-            <li>Map</li>
-            <li>Projects</li>
-            <Link to="/newsfeed">
+            <NavLink to="/map">
+              <li>Map</li>
+            </NavLink>
+            <NavLink to="/dashboard">
+              <li>Projects</li>
+            </NavLink>
+            <NavLink to="/newsfeed">
               <li>Newsfeed</li>
-            </Link>
+            </NavLink>
             <li>Profil</li>
             <li>
               <NavLink to="/" className="nav-link" onClick={handleDisconnect}>
                 <div className="sidenav-item">
-                  <button className="button-no-style" type="submit">
+                  <button className="btn-logout" type="submit">
                     Logout
                   </button>
                 </div>

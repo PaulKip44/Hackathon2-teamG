@@ -1,5 +1,6 @@
 import React from "react";
 import "./form.css";
+import { toast } from "react-toastify";
 
 function Form({ setInputText, inputText, commentsList, setCommentsList }) {
   const inputTextHandler = (e) => {
@@ -12,10 +13,13 @@ function Form({ setInputText, inputText, commentsList, setCommentsList }) {
   const submitCommentHandler = (e) => {
     e.preventDefault();
     if (!inputText.firstname || !inputText.lastname || !inputText.comment) {
-      // alert("All fields are required");
+      toast.warning("All fields are required");
     } else {
       setCommentsList([...commentsList, { text: inputText }]);
+      toast.success("Comment sent !");
       setInputText({
+        firstname: "",
+        lastname: "",
         comment: "",
       });
     }
@@ -23,12 +27,7 @@ function Form({ setInputText, inputText, commentsList, setCommentsList }) {
 
   return (
     <div>
-      <form
-        id="ideasForm"
-        //  action="/api/route/evenement"
-        // method="post"
-        // onSubmit={onSubmit}
-      >
+      <form id="ideasForm">
         <h3>Post an idea !</h3>
 
         <label htmlFor="firstname">
@@ -73,7 +72,7 @@ function Form({ setInputText, inputText, commentsList, setCommentsList }) {
           className="btn-blue"
           onClick={submitCommentHandler}
         >
-          Add a comment
+          Send
         </button>
       </form>
     </div>

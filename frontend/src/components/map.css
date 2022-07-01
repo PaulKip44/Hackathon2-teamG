@@ -1,0 +1,18 @@
+#container-page-map {
+  display: flex;
+}
+
+.content-map {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 3rem;
+}
+
+.map {
+  background-image: "@assets/map.jpeg";
+}
+
+#container-page-map select {
+  width: fit-content;
+}

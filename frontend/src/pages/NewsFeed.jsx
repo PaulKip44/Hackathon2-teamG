@@ -7,7 +7,7 @@ import SearchBarDashBoard from "../components/SearchBarDashBoard";
 import "./NewsFeed.css";
 
 function NewsFeed() {
-  const [user, setUser] = useState(1);
+  const [user, setUser] = useState(4);
   const [news, setNews] = useState([]);
   const [users, setUsers] = useState([]);
 

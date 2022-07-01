@@ -4,20 +4,20 @@ import TeamMembers from "@components/TeamMembers/TeamMembers";
 import Nav from "@components/Nav/Nav";
 import "./dashboard.css";
 import IdeasBox from "@components/IdeasBox/IdeasBox";
-import SearchBarDashBoard from "../components/SearchBarDashBoard";
+import Description from "@components/Description/Description";
 
 function Dashboard() {
   return (
     <div id="dashboard">
-      <div>
-        <Nav />
-      </div>
+      <Nav />
 
-      <div>
-        <SearchBarDashBoard />
-        <TeamMembers />
+      <div id="container">
+        <div id="box">
+          <Description />
+          <TeamMembers />
+        </div>
+        <IdeasBox />
       </div>
-      <IdeasBox />
     </div>
   );
 }
