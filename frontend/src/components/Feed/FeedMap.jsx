@@ -2,12 +2,13 @@ import React from "react";
 import "./FeedOne.css";
 import FeedOne from "./FeedOne";
 
-function FeedMap({ feeds }) {
+function FeedMap(newsItem) {
+  console.error(newsItem);
   return (
     <div>
-      {feeds.map(({ id, image, contents }) => (
-        <FeedOne key={id} image={image} contents={contents} />
-      ))}
+      {[newsItem].map((item) => {
+        return <FeedOne key={item.Id} item={item} />;
+      })}
     </div>
   );
 }

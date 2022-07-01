@@ -11,6 +11,13 @@ class newManager extends AbstractManager {
       keyTable
     );
   }
+
+  findByUser(userId) {
+    return this.connection.query(
+      `SELECT n.* FROM ${this.table} AS n INNER JOIN user_has_project AS up ON n.project_Id = up.project_Id WHERE up.user_Id = ?`,
+      [userId]
+    );
+  }
 }
 
 module.exports = newManager;

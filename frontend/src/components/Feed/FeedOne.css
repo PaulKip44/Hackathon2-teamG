@@ -2,11 +2,12 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  height: 8rem;
+  /* height: 8rem; */
   width: 70vw;
   background-color: var(--color_1);
   border-bottom: 0.75rem solid var(--background-color);
   border-top: 0.75rem solid var(--background-color);
+  padding: 1rem;
 }
 
 .avatar-feed {
@@ -14,6 +15,8 @@
   height: 5rem;
   padding-left: 2rem;
   background-color: var(--color_1);
+  min-width: 5rem;
+  max-width: 10rem;
 }
 
 .avatar-feed img {
@@ -23,12 +26,14 @@
 }
 
 .feed-content p {
+  text-align: left;
   display: flex;
   align-items: center;
   font-size: 1.2rem;
-  height: 8rem;
+  width: 45ch;
+  /* height: 8rem; */
   padding-left: 2rem;
   background-color: var(--color_1);
-  border-bottom: 0.75rem solid var(--background-color);
-  border-top: 0.75rem solid var(--background-color);
+  /* border-bottom: 0.75rem solid var(--background-color);
+  border-top: 0.75rem solid var(--background-color); */
 }
